@@ -34,3 +34,35 @@ def ejecutar_menu():
                 print("Ticket agregado con éxito.")
             except ValueError:
                 print("ID inválido.")
+#elif opc == 2:
+        elif opc == 2:
+            # Listar Tickets
+            print("\n--- LISTADO DE TICKETS ---")
+            if not lista_tickets:
+                print("No hay tickets registrados.")
+                #for t in lista_tickets: para mostrar los tickets
+            for t in lista_tickets:
+                print(f"ID: {t['id']} | Solicitante: {t['solicitante']} | Estado: {t['status']}")
+        #opc == 3: para buscar por solicitante
+        elif opc == 3:
+            print("\n--- BUSCAR POR SOLICITANTE ---")
+            buscar = input("Nombre a buscar: ").strip().lower()
+            for t in lista_tickets:
+                if buscar in t['solicitante'].lower():
+                    print(f"Encontrado -> ID: {t['id']} | Título: {t['titulo']}")
+           #opc == 4: para mostrar resumen por prioridad         
+        elif opc == 4:
+            print("\n--- RESUMEN POR PRIORIDAD ---")
+            conteos = {"Low": 0, "Medium": 0, "High": 0, "Critical": 0}
+            for t in lista_tickets:
+                if t['prioridad'] in conteos:
+                    conteos[t['prioridad']] += 1
+            print(conteos)
+        elif opc == 5:
+            print("Saliendo de la aplicación.")
+            break
+        else:
+            print("Opción fuera de rango.")
+
+if __name__ == "__main__":
+    ejecutar_menu()
