@@ -16,4 +16,21 @@ def ejecutar_menu():
         except ValueError:
             print("Opción inválida.")
             continue
-
+#        if opc == 5:
+#            print("Saliendo del programa...")
+        if opc == 1:
+            print("\n--- REGISTRAR TICKET ---")
+            try:
+                id_t = int(input("ID: "))
+                sol = input("Solicitante: ").strip()
+                tit = input("Título: ").strip()
+                prio = input("Prioridad (Low/Medium/High/Critical): ").strip()
+                
+                if not sol or not tit:
+                    print("Error: Campos obligatorios vacíos.")
+                    continue
+                    
+                lista_tickets.append({"id": id_t, "solicitante": sol, "titulo": tit, "prioridad": prio, "status": "Open"})
+                print("Ticket agregado con éxito.")
+            except ValueError:
+                print("ID inválido.")
