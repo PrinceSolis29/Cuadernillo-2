@@ -1,1 +1,0 @@
-# SolisPrince_PreparacionParcial1
