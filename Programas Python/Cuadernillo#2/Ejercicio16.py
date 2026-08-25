@@ -16,7 +16,7 @@ class Ticket:
 
 # Demostración del comportamiento de Identidad vs Igualdad
 if __name__ == "__main__":
-    print("--- DEMOSTRACIÓN DE IDENTIDAD VS IGUALDAD ---")
+    print("Ejemplos de identidad Vs Igualdad")
     
     # Caso 1: Dos objetos independientes con idéntica información
     t1 = Ticket(1, "Ana Lopez", "ALTA")
@@ -30,7 +30,7 @@ if __name__ == "__main__":
     print(f"Dirección de memoria de t2: {id(t2)}")
     print(f"Dirección de memoria de t3: {id(t3)}\n")
 
-    print("--- PRUEBAS CON OPERADORES Y MÉTODOS ---")
+    print("Ejemplos de operados y metodos")
     # t1 y t2 no son el mismo objeto en memoria
     print(f"¿t1 is t2? (¿Misma identidad?): {t1 is t2}")  # Esperado: False
     
